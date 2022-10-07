@@ -18,10 +18,10 @@ connection = f'mysql+pymysql://{mysql_user}:{mysql_password}@{mysql_host}/{mysql
 db = create_engine(connection)
 
 ## Defining Query
-query = 'SELECT * FROM db2.table2'
+query = 'SELECT * FROM db2.table2;'
 query
 
-df = pd.read_sql(query, con=db)
+df = pd.read_sql("""query""", con=db)
 
 ## Creating dataframe
 real_df = pd.read_csv('https://raw.githubusercontent.com/hantswilliams/HHA-507-2022/main/descriptive/example1/data/data.csv')
